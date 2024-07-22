@@ -1,5 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap');
 
+:root {
+    /* COLORS  DARK MODE */
+    --bg: #282828;
+    --bg-darker: #1d2021;
+    --fg: #ebdbb2;
+    --gray: #928374;
+	--gray-light: #a89984;
+    --red: #cc241d;
+    --red-light: #fb4934;
+    --green: #98971a;
+    --green-light: #b8bb26;
+    --yellow: #d79921;
+    --yellow-light: #fabd2f;
+    --blue: #458588;
+	--blue-light: #83a598;
+	--purple: #b16286;
+    --purple-light: #d3869b;
+	--aqua: #689d6a;
+    --aqua-light: #8ec07c;
+	--orange: #d65d0e;
+    --orange-light: #fe8019;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -18,13 +41,9 @@ body {
     align-items: center;
 }
 
-#info_container {
-    background-color: red;
-}
+#info_container {}
 
-#image_container {
-    background-color: green;
-}
+#image_container {}
 
 .div_main_container {
     height: 100vh;
@@ -45,11 +64,13 @@ body {
 }
 
 #search_bar p {
+    color: var(--fg);
     font-size: 1.6rem;
     font-weight: bold;
 }
 
 #search_text {
+    color: var(--fg);
     background-color: transparent;
     border-style: none;
     font-size: 1.4rem;
@@ -82,9 +103,11 @@ input[type=text]:focus {
 }
 
 #date {
+    color: var(--fg);
     font-size: 1.2rem;
 }
 
 #time {
+    color: var(--fg);
     font-size: 2.2rem;
 }
