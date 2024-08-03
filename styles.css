@@ -47,10 +47,6 @@ body {
     }
 }
 
-#info_container {}
-
-#image_container {}
-
 .div_main_container {
     height: 100vh;
 }
@@ -103,7 +99,13 @@ input[type=text]:focus {
     overflow: hidden;
     display: flex;
     justify-content: center;
+    transition: 0.4s;
     align-items: center;
+    filter: grayscale(1) blur(4px);
+}
+
+#image-div:hover {
+    filter: grayscale(0) blur(0);
 }
 
 #clock_container {
