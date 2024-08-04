@@ -59,6 +59,58 @@ body {
     justify-content: center;
 }
 
+#card_list {
+    margin: 2rem 20%;
+    display: grid;
+    grid-template-rows: repeat(1, minmax(116px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(116px, 1fr));
+    gap: 1rem;
+}
+
+.card h4 {
+    font-size: 1.1rem;
+    font-weight: bold;      
+    text-align: center;
+    margin-bottom: 0.4rem;
+}
+
+.card ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+#card_one h4{
+    color: var(--red)
+}
+
+#card_one li{
+    color: var(--red-light)
+}
+
+#card_two h4{
+    color: var(--green)
+}
+
+#card_two li{
+    color: var(--green-light)
+}
+
+#card_three h4{
+    color: var(--yellow)
+}
+
+#card_three li{
+    color: var(--yellow-light)
+}
+
+#card_four h4{
+    color: var(--blue)
+}
+
+#card_four li{
+    color: var(--blue-light)
+}
+
 #search_bar {
     display: flex;
     justify-content: center;
