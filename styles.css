@@ -67,6 +67,18 @@ body {
     gap: 1rem;
 }
 
+.card {
+    transition: 0.4s;
+}
+.card:hover {
+    transform: scale(1.2);
+}
+
+#card_list:hover .card:not(:hover) {
+    filter: grayscale(1) blur(2px);
+
+}
+
 .card h4 {
     font-size: 1.1rem;
     font-weight: bold;      
