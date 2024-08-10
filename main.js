@@ -44,3 +44,33 @@ input.addEventListener("input", function() {
 
     this.style.width = desired_width + "ch";
 });
+
+// =======================================================
+// Función para manejar los atajos de teclado
+// =======================================================
+const search_bar = document.getElementById("search_bar");
+const search_engine_img = document.getElementById("search_engine_img");
+
+document.addEventListener("keydown", (event) => {
+    if (event.ctrlKey === true) {
+        event.preventDefault(); // Para que nuestros shortcuts no interfieran con los del navegador
+
+        switch (event.key.toLowerCase()){
+            case "y":
+                search_engine_img.src = "assets/youtube.svg"
+                search_engine_img.alt = "youtube"
+                search_bar.action = "https://www.youtube.com/results?search_query="
+                break;
+            case "d":
+                search_engine_img.src = "assets/duckduckgo.svg"
+                search_engine_img.alt = "duckduckgo"
+                search_bar.action = "https://www.duckduckgo.com/?q="
+                break;
+            case "g":
+                search_engine_img.src = "assets/google.svg"
+                search_engine_img.alt = "google"
+                search_bar.action = "https://www.google.com/search?q="
+                break;
+        }
+    }
+});
