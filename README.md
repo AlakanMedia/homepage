@@ -13,8 +13,8 @@ Startpage with minimalist style and uses the color scheme called [gruvbox](https
 ## Keyboard Shortcuts
 Keyboard shortcuts for searching with a specific search engine.
 
-| Shortcut | Description |
-| -------- | ----------- |
+| Shortcut | Search Engine |
+| -------- | ------------- |
 | ctrl + d | DuckDuckGo |
 | ctrl + g | Google |
 | ctrl + y | YouTube |
