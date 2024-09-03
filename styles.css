@@ -27,6 +27,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-size: 16px;
 }
 
 body {
@@ -54,35 +55,39 @@ a {
     flex-direction: row;
 }
 
-@media (width < 680px) {
-    #main_container {
-        flex-direction: column-reverse;
-    }
-}
-
 .div_main_container {
     height: 100vh;
 }
 
 #info_container {
-    width: 100%;
-    padding: 2%;
+    width: 900px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
+@media (width < 590px) {
+    #main_container {
+        flex-direction: column-reverse;
+    }
+
+    #info_container {
+        width: 100%;
+    }
+}
+
 #card_list {
-    margin: 2rem 20%;
+    margin: 2rem 10% 0 10%;
     display: grid;
-    grid-template-rows: repeat(1, minmax(116px, auto));
-    grid-template-columns: repeat(auto-fit, minmax(116px, 1fr));
+    grid-template-rows: repeat(1, minmax(7rem, auto));
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
     gap: 1rem;
 }
 
 .card {
     transition: 0.4s;
 }
+
 .card:hover {
     transform: scale(1.2);
 }
@@ -93,7 +98,7 @@ a {
 }
 
 .card h4 {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-weight: bold;      
     text-align: center;
     margin-bottom: 0.4rem;
@@ -161,14 +166,13 @@ input[type=text]:focus {
 }
 
 #image_container {
-    width: 200px;
+    width: 13rem;
     flex-direction: column;
-    margin: 0 2%;
+    margin-right: 2%;
 }
 
-
 #image_div {
-    width: 200px;
+    width: 13rem;
     height: auto;
     overflow: hidden;
     transition: 0.4s;
@@ -191,5 +195,5 @@ input[type=text]:focus {
 
 #time {
     color: var(--fg);
-    font-size: 2.2rem;
+    font-size: 2rem;
 }
