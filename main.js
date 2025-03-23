@@ -4,72 +4,96 @@
 const time = document.getElementById("time");
 const date = document.getElementById("date");
 
-const month_names = [
+const monthNames = [
     "January", "February", "March", "April",
     "May", "June", "July", "August",
-    "September", "October", "November", "December"
+    "September", "October", "November", "December",
 ];
 
 let interval = setInterval(() => {
-    let local_date = new Date();
+    let localDate = new Date();
 
-    let day = local_date.getDate();
-    let month = local_date.getMonth();
-    let year = local_date.getFullYear();
+    let day = localDate.getDate();
+    let month = localDate.getMonth();
+    let year = localDate.getFullYear();
 
-    time.innerHTML = local_date.toLocaleTimeString();
-    date.innerHTML = `${day} ${month_names[month]} ${year}`;
+    time.innerHTML = localDate.toLocaleTimeString();
+    date.innerHTML = `${day} ${monthNames[month]} ${year}`;
 }, 1000);
 
 // =======================================================
 // Función para manejar el ancho de la barra de búsqueda
 // =======================================================
-const input = document.getElementById("search_text");
-let initial_width = input.placeholder.length; 
+const input = document.getElementById("search-text");
+let initialWidth = input.placeholder.length; 
 
-input.style.width = initial_width + "ch";
+input.style.width = initialWidth + "ch";
 
 input.addEventListener("input", function() {
-    let desired_width = this.value.length;
-    const max_width = 18;
+    let desiredWidth = this.value.length;
+    const maxWidth = 18;
 
-    if (desired_width == 0) {
+    if (desiredWidth == 0) {
         input.placeholder = "type...";
-        desired_width = initial_width;
+        desiredWidth = initialWidth;
     }
 
-    if (desired_width > max_width) {
-        desired_width = max_width;
+    if (desiredWidth > maxWidth) {
+        desiredWidth = maxWidth;
     }
 
-    this.style.width = desired_width + "ch";
+    this.style.width = desiredWidth + "ch";
 });
 
 // =======================================================
 // Función para manejar los atajos de teclado
 // =======================================================
-const search_bar = document.getElementById("search_bar");
-const search_engine_img = document.getElementById("search_engine_img");
+const searchBar = document.getElementById("search-bar");
+const searchEngineLogo = document.getElementById("search-engine-logo");
+
+const logos = {
+    d: "ph-paw-print",
+    g: "ph-google-chrome-logo",
+    y: "ph-youtube-logo",
+};
 
 document.addEventListener("keydown", (event) => {
     if (event.ctrlKey === true) {
         event.preventDefault(); // Para que nuestros shortcuts no interfieran con los del navegador
 
-        switch (event.key.toLowerCase()){
-            case "y":
-                search_engine_img.src = "assets/youtube.svg"
-                search_engine_img.alt = "youtube"
-                search_bar.action = "https://www.youtube.com/results?search_query="
-                break;
+        switch (event.key.toLocaleLowerCase()){
             case "d":
-                search_engine_img.src = "assets/duckduckgo.svg"
-                search_engine_img.alt = "duckduckgo"
-                search_bar.action = "https://www.duckduckgo.com/?q="
+                searchBar.action = "https://www.duckduckgo.com/?q=";
+
+                if (searchEngineLogo.classList.contains(logos.g)) {
+                    searchEngineLogo.classList.replace(logos.g, logos.d);
+                }
+                else if (searchEngineLogo.classList.contains(logos.y)) {
+                    searchEngineLogo.classList.replace(logos.y, logos.d);
+                }
+
                 break;
             case "g":
-                search_engine_img.src = "assets/google.svg"
-                search_engine_img.alt = "google"
-                search_bar.action = "https://www.google.com/search?q="
+                searchBar.action = "https://www.google.com/search?q=";
+
+                if (searchEngineLogo.classList.contains(logos.d)) {
+                    searchEngineLogo.classList.replace(logos.d, logos.g);
+                }
+                else if (searchEngineLogo.classList.contains(logos.y)) {
+                    searchEngineLogo.classList.replace(logos.y, logos.g);
+                }
+
+                break;
+            case "y":
+                searchBar.action = "https://www.youtube.com/results?search_query=";
+
+                if (searchEngineLogo.classList.contains(logos.d)) {
+                    searchEngineLogo.classList.replace(logos.d, logos.y);
+                }
+                else if (searchEngineLogo.classList.contains(logos.g)) {
+                    searchEngineLogo.classList.replace(logos.g, logos.y);
+                }
+
                 break;
         }
     }

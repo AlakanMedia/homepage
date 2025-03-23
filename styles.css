@@ -40,26 +40,26 @@ a {
     color: inherit;
 }
 
-#main_container,
-#search_bar,
-#image_container,
-#image_div,
-#clock_container {
+#main-container,
+#search-bar,
+#image-container,
+#image-div,
+#clock-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 
-#main_container {
+#main-container {
     flex-direction: row;
 }
 
-.div_main_container {
+.sub-container {
     height: 100vh;
 }
 
-#info_container {
+#info-container {
     width: 900px;
     display: flex;
     flex-direction: column;
@@ -67,16 +67,16 @@ a {
 }
 
 @media (width < 590px) {
-    #main_container {
+    #main-container {
         flex-direction: column-reverse;
     }
 
-    #info_container {
+    #info-container {
         width: 100%;
     }
 }
 
-#card_list {
+#card-list {
     margin: 2rem 10% 0 10%;
     display: grid;
     grid-template-rows: repeat(1, minmax(7rem, auto));
@@ -92,7 +92,7 @@ a {
     transform: scale(1.2);
 }
 
-#card_list:hover .card:not(:hover) {
+#card-list:hover .card:not(:hover) {
     filter: grayscale(1) blur(2px);
 
 }
@@ -109,11 +109,11 @@ a {
     text-align: center;
 }
 
-#card_one h4{
+#card-one h4{
     color: var(--red)
 }
 
-#card_one li{
+#card-one li{
     color: var(--red-light)
 }
 
@@ -147,13 +147,19 @@ a {
     font-weight: bold;
 }
 
-#search_bar p {
+#search-engine-logo {
+    color: var(--fg);
+    font-size: 34px;
+    margin-right: 0.5rem;
+}
+
+#search-bar p {
     color: var(--fg);
     font-size: 1.6rem;
     font-weight: bold;
 }
 
-#search_text {
+#search-text {
     color: var(--fg);
     background-color: transparent;
     border-style: none;
@@ -165,13 +171,13 @@ input[type=text]:focus {
     outline: none;
 }
 
-#image_container {
+#image-container {
     width: 13rem;
     flex-direction: column;
     margin-right: 2%;
 }
 
-#image_div {
+#image-div {
     width: 13rem;
     height: auto;
     overflow: hidden;
@@ -179,11 +185,11 @@ input[type=text]:focus {
     filter: grayscale(1) blur(4px);
 }
 
-#image_div:hover {
+#image-div:hover {
     filter: grayscale(0) blur(0);
 }
 
-#clock_container {
+#clock-container {
     flex-direction: column;
     width: 100%
 }
